@@ -24,6 +24,7 @@ setup(
 	description='Image Hashing library',
 	long_description=long_description,
 	long_description_content_type='text/x-rst',
+	python_requires=">=3.8",
 	install_requires=[
 		'numpy',
 		'scipy',		# for phash
