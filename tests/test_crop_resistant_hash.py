@@ -15,11 +15,11 @@ class Test(TestImageHash):
 		original_hash = imagehash.crop_resistant_hash(self.image)
 		rotate_image = self.image.rotate(-1)
 		small_rotate_hash = imagehash.crop_resistant_hash(rotate_image)
-		emsg = ('slightly rotated image should have similar hash {} {}'.format(original_hash, small_rotate_hash))
+		emsg = (f'slightly rotated image should have similar hash {original_hash} {small_rotate_hash}')
 		self.assertTrue(original_hash.matches(small_rotate_hash), emsg)
 		rotate_image = self.image.rotate(-90)
 		large_rotate_hash = imagehash.crop_resistant_hash(rotate_image)
-		emsg = ('rotated image should have different hash {} {}'.format(original_hash, large_rotate_hash))
+		emsg = (f'rotated image should have different hash {original_hash} {large_rotate_hash}')
 		self.assertFalse(original_hash.matches(large_rotate_hash), emsg)
 
 		other_hashes = [small_rotate_hash, large_rotate_hash]

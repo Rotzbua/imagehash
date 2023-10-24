@@ -17,7 +17,7 @@ for x in range(5, 50, 5):
 	crop_img = full_image.crop((start * width, start * height, end * width, end * height))
 	crop_hash = imagehash.crop_resistant_hash(crop_img)
 	if SAVE_IMAGES:
-		crop_img.save('crop_{}.png'.format(str(x).zfill(2)))
+		crop_img.save(f'crop_{str(x).zfill(2)}.png')
 	crop_diff = full_hash.hash_diff(crop_hash)
 	print(
 		'Cropped {}% from each side. Hash has {} matching segments with {} total hamming distance'.format(
